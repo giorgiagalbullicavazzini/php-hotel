@@ -57,6 +57,30 @@ $hotels = [
 </head>
 
 <body class="p-5">
+    <form action="index.php" method="get" class="mb-3">
+        <!-- Get all results -->
+        <div class="all-results">
+            <input type="radio" name="parking" value="no" id="parking-no">
+            <label for="parking-no">Trova tutti i risultati</label>
+        </div>
+        <!-- // Get all results -->
+
+        <!-- Get only results with a parking -->
+        <div class="only-parking">
+            <input type="radio" name="parking" value="yes" id="parking-yes">
+            <label for="parking-yes">Trova solo i risultati con un parcheggio</label>
+        </div>
+        <!-- // Get only results with a parking -->
+
+        <button type="submit">Filtra</button>
+    </form>
+
+    <!-- Change $only_parking value -->
+    <?php $only_parking = ($_GET['parking'] == 'yes') ? true : false;
+    var_dump($_GET['parking']);
+    var_dump($only_parking); ?>
+    <!-- // Change $only_parking value -->
+
     <!-- Hotels Table -->
     <table class="table table-light table-striped table-hover table-bordered">
         <thead class="table-dark">
@@ -71,6 +95,11 @@ $hotels = [
         <tbody class="table-group-divider">
             <?php for ($i = 0; $i < count($hotels); $i++) {
                 $hotel = $hotels[$i];
+                $parking_yes = [];
+
+                if ($hotel['parking'] == true) {
+                    $parking_yes = $hotel;
+                }
             ?>
                 <tr>
                     <th scope="row">
