@@ -80,13 +80,13 @@ $hotels = [
                         <?php echo $hotel['description']; ?>
                     </td>
                     <td>
-                        <?php echo $hotel['parking'] ? 'Vero' : 'Falso'; ?>
+                        <?php echo $hotel['parking'] ? 'Sì' : 'No'; ?>
                     </td>
                     <td>
                         <?php echo $hotel['vote']; ?>
                     </td>
                     <td>
-                        <?php echo $hotel['distance_to_center']; ?>
+                        <?php echo $hotel['distance_to_center'] . ' km'; ?>
                     </td>
                 </tr>
             <?php } ?>
