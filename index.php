@@ -57,7 +57,7 @@ $hotels = [
 </head>
 
 <body>
-    <ul>
+    <!-- <ul>
         <?php for ($i = 0; $i < count($hotels); $i++) {
             $hotel = $hotels[$i];
         ?>
@@ -67,7 +67,43 @@ $hotels = [
             <li><?php echo $hotel['vote']; ?></li>
             <li><?php echo $hotel['distance_to_center']; ?></li>
         <?php } ?>
-    </ul>
+    </ul> -->
+
+    <table class="table table-light table-striped table-hover table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+            </tr>
+        </thead>
+        <tbody class="table-group-divider">
+            <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td colspan="2">Larry the Bird</td>
+                <td>@twitter</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 
 </html>
